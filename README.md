@@ -27,7 +27,7 @@ terraform destroy
 The following code will deploy a single collector to GCP:
 ```
 module "gcp_collector" {
-  source            = "gcp_collector"
+  source = "git::git@github.com:BlueMedoraPublic/tf-bindplane-collector.git//gcp_collector?ref=v0.1.0"
 
   project           = "vrops-demo"
   bindplane_api_key = "abcdefghijklmnop"
@@ -41,9 +41,8 @@ The following code will deploy a single collector to Azure.
 Note, you need to specify your `subnet_id`:
 ```
 module "azure_collector" {
-  source = "azure_collector"
+  source = "git::git@github.com:BlueMedoraPublic/tf-bindplane-collector.git//azure_collector?ref=v0.1.0"
 
-  // required parameters //
   resource_group    = "collector-testing"
   bindplane_api_key = "abcdefghijklmnop"
   collector_name    = "azure-poc"
