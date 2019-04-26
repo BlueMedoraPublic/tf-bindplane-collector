@@ -15,7 +15,7 @@ data "vault_generic_secret" "azure_account" {
 // authenticated
 //
 module "gcp_collector" {
-  source = "gcp_collector"
+  source = "github.com/BlueMedoraPublic/tf-bindplane-collector/gcp_collector"
 
   // required parameters //
   project           = "vrops-demo"
@@ -28,7 +28,7 @@ module "gcp_collector" {
 // authenticated
 //
 module "azure_collector" {
-  source = "azure_collector"
+  source = "github.com/BlueMedoraPublic/tf-bindplane-collector/azure_collector"
 
   // required parameters //
   resource_group    = "collector-testing"
