@@ -10,7 +10,7 @@ data "template_file" "user_data" {
   template = "${file("${path.module}/../scripts/${var.userdata_script}")}"
 
   vars {
-    api_key        = "${var.bindplane_api_key}"
+    api_key        = "${var.bindplane_secret_key}"
     collector_name = "${var.collector_name}"
   }
 }

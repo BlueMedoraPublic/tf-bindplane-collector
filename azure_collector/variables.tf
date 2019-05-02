@@ -4,7 +4,7 @@ variable "resource_group" {
   description = "The Azure resource group to deploy to"
 }
 
-variable "bindplane_api_key" {
+variable "bindplane_secret_key" {
   description = "API key for bindplane"
 }
 

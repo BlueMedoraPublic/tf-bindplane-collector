@@ -15,11 +15,11 @@ data "vault_generic_secret" "azure_account" {
 // authenticated
 //
 module "gcp_collector" {
-  source = "git::git@github.com:BlueMedoraPublic/tf-bindplane-collector.git//gcp_collector?ref=v0.1.0"
+  source = "git::git@github.com:BlueMedoraPublic/tf-bindplane-collector.git//gcp_collector?ref=v0.1.1"
 
   // required parameters //
   project           = "vrops-demo"
-  bindplane_api_key = "${data.vault_generic_secret.api_key.data["api_key"]}"
+  bindplane_secret_key = "${data.vault_generic_secret.api_key.data["api_key"]}"
   collector_name    = "gcp-poc"
   network_zone      = "us-west1-a"
 }
@@ -28,11 +28,11 @@ module "gcp_collector" {
 // authenticated
 //
 module "azure_collector" {
-  source = "git::git@github.com:BlueMedoraPublic/tf-bindplane-collector.git//azure_collector?ref=v0.1.0"
+  source = "git::git@github.com:BlueMedoraPublic/tf-bindplane-collector.git//azure_collector?ref=v0.1.1"
 
   // required parameters //
   resource_group    = "collector-testing"
-  bindplane_api_key = "${data.vault_generic_secret.api_key.data["api_key"]}"
+  bindplane_secret_key = "${data.vault_generic_secret.api_key.data["api_key"]}"
   collector_name    = "azure-poc"
   subnet_id         = "/subscriptions/${data.vault_generic_secret.azure_account.data["subscription_id"]}/resourceGroups/collector-testing/providers/Microsoft.Network/virtualNetworks/collector-testing-network/subnets/collector-testing-subnet-0"
   admin_username    = "medora"

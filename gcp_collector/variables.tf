@@ -4,7 +4,7 @@ variable "project" {
   description = "The Google Cloud Project to deploy to"
 }
 
-variable "bindplane_api_key" {
+variable "bindplane_secret_key" {
   description = "API key for bindplane"
 }
 
