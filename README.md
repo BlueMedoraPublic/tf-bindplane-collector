@@ -27,10 +27,10 @@ terraform destroy
 The following code will deploy a single collector to GCP:
 ```
 module "gcp_collector" {
-  source = "git::git@github.com:BlueMedoraPublic/tf-bindplane-collector.git//gcp_collector?ref=v0.1.0"
+  source = "git::git@github.com:BlueMedoraPublic/tf-bindplane-collector.git//gcp_collector?ref=v0.1.1"
 
   project           = "vrops-demo"
-  bindplane_api_key = "abcdefghijklmnop"
+  bindplane_secret_key = "abcdefghijklmnop"
   collector_name    = "gcp-c-0"
   network_zone      = "us-west1-a"
 }
@@ -41,10 +41,10 @@ The following code will deploy a single collector to Azure.
 Note, you need to specify your `subnet_id`:
 ```
 module "azure_collector" {
-  source = "git::git@github.com:BlueMedoraPublic/tf-bindplane-collector.git//azure_collector?ref=v0.1.0"
+  source = "git::git@github.com:BlueMedoraPublic/tf-bindplane-collector.git//azure_collector?ref=v0.1.1"
 
   resource_group    = "collector-testing"
-  bindplane_api_key = "abcdefghijklmnop"
+  bindplane_secret_key = "abcdefghijklmnop"
   collector_name    = "azure-poc"
   subnet_id         = "<subnet_id here>"
   admin_username    = "medora"
